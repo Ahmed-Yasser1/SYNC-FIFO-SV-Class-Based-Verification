@@ -1,0 +1,1909 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /top/fifo_if
+=== Design Unit: work.FIFO_if
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       2         2         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/fifo_if --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File FIFO_if.sv
+    1                                                interface FIFO_if (clk);
+    2                                                    parameter FIFO_WIDTH = 16;
+    3                                                    parameter FIFO_DEPTH = 8;
+    4                                                
+    5                                                    localparam max_fifo_addr = $clog2(FIFO_DEPTH);
+    6                                                
+    7                                                    input logic clk;
+    8                                                
+    9                                                    logic [FIFO_WIDTH - 1 : 0] data_in;
+    10                                                   logic rst_n;
+    11                                                   logic wr_en;
+    12                                                   logic rd_en;
+    13                                                   
+    14                                                   logic [FIFO_WIDTH - 1 : 0] data_out;
+    15                                                   logic wr_ack;
+    16                                                   logic overflow;
+    17                                                   logic full;
+    18                                                   logic empty;
+    19                                                   logic almostfull; 
+    20                                                   logic almostempty;
+    21                                                   logic underflow;
+    22                                               
+    23              1                          1         clocking driv_cb @ (posedge clk);
+    24                                                       default output #0;
+    25                                                       output data_in;
+    26                                                       output rst_n;
+    27                                                       output wr_en;
+    28                                                       output rd_en;
+    29                                                   endclocking
+    30                                               
+    31              1                          1         clocking mon_cb @ (posedge clk);
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         86        86         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/fifo_if --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                       almostempty           1           1      100.00 
+                                        almostfull           1           1      100.00 
+                                               clk           1           1      100.00 
+                                     data_in[15-0]           1           1      100.00 
+                                    data_out[15-0]           1           1      100.00 
+                                             empty           1           1      100.00 
+                                              full           1           1      100.00 
+                                          overflow           1           1      100.00 
+                                             rd_en           1           1      100.00 
+                                             rst_n           1           1      100.00 
+                                         underflow           1           1      100.00 
+                                            wr_ack           1           1      100.00 
+                                             wr_en           1           1      100.00 
+
+Total Node Count     =         43 
+Toggled Node Count   =         43 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (86 of 86 bins)
+
+=================================================================================
+=== Instance: /top/dut/fifo_sva
+=== Design Unit: work.assertions
+=================================================================================
+
+Assertion Coverage:
+    Assertions                      14        14         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/top/dut/fifo_sva/prop1_assert
+                     assertions.sv(69)                  0          1
+/top/dut/fifo_sva/prop2_assert
+                     assertions.sv(70)                  0          1
+/top/dut/fifo_sva/prop3_assert
+                     assertions.sv(71)                  0          1
+/top/dut/fifo_sva/prop4_assert
+                     assertions.sv(72)                  0          1
+/top/dut/fifo_sva/prop5_assert
+                     assertions.sv(73)                  0          1
+/top/dut/fifo_sva/prop6_assert
+                     assertions.sv(74)                  0          1
+/top/dut/fifo_sva/prop7_assert
+                     assertions.sv(75)                  0          1
+/top/dut/fifo_sva/prop8_assert
+                     assertions.sv(76)                  0          1
+/top/dut/fifo_sva/prop9_assert
+                     assertions.sv(77)                  0          1
+/top/dut/fifo_sva/prop10_assert
+                     assertions.sv(78)                  0          1
+/top/dut/fifo_sva/prop11_assert
+                     assertions.sv(79)                  0          1
+/top/dut/fifo_sva/prop12_assert
+                     assertions.sv(80)                  0          1
+/top/dut/fifo_sva/prop13_assert
+                     assertions.sv(81)                  0          1
+/top/dut/fifo_sva/prop14_assert
+                     assertions.sv(82)                  0          1
+
+Directive Coverage:
+    Directives                      14        14         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/top/dut/fifo_sva/prop1_cover            assertions Verilog  SVA  assertions.sv(84)
+                                                                                 3 Covered   
+/top/dut/fifo_sva/prop2_cover            assertions Verilog  SVA  assertions.sv(85)
+                                                                                65 Covered   
+/top/dut/fifo_sva/prop3_cover            assertions Verilog  SVA  assertions.sv(86)
+                                                                                10 Covered   
+/top/dut/fifo_sva/prop4_cover            assertions Verilog  SVA  assertions.sv(87)
+                                                                                10 Covered   
+/top/dut/fifo_sva/prop5_cover            assertions Verilog  SVA  assertions.sv(88)
+                                                                                15 Covered   
+/top/dut/fifo_sva/prop6_cover            assertions Verilog  SVA  assertions.sv(89)
+                                                                                25 Covered   
+/top/dut/fifo_sva/prop7_cover            assertions Verilog  SVA  assertions.sv(90)
+                                                                                14 Covered   
+/top/dut/fifo_sva/prop8_cover            assertions Verilog  SVA  assertions.sv(91)
+                                                                                16 Covered   
+/top/dut/fifo_sva/prop9_cover            assertions Verilog  SVA  assertions.sv(92)
+                                                                                12 Covered   
+/top/dut/fifo_sva/prop10_cover           assertions Verilog  SVA  assertions.sv(93)
+                                                                                34 Covered   
+/top/dut/fifo_sva/prop11_cover           assertions Verilog  SVA  assertions.sv(94)
+                                                                                28 Covered   
+/top/dut/fifo_sva/prop12_cover           assertions Verilog  SVA  assertions.sv(95)
+                                                                                 1 Covered   
+/top/dut/fifo_sva/prop13_cover           assertions Verilog  SVA  assertions.sv(96)
+                                                                                 2 Covered   
+/top/dut/fifo_sva/prop14_cover           assertions Verilog  SVA  assertions.sv(97)
+                                                                                12 Covered   
+
+=================================================================================
+=== Instance: /top/dut
+=== Design Unit: work.FIFO
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        25        25         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File FIFO.sv
+------------------------------------IF Branch------------------------------------
+    10                                       144     Count coming in to IF
+    10              1                          6     	if (!intf.rst_n) begin
+    15              1                         66     	else if (intf.wr_en && count < intf.FIFO_DEPTH) begin
+    20              1                         72     	else begin 
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                        72     Count coming in to IF
+    22              1                         10     		if (intf.full & intf.wr_en)
+    24              1                         62     		else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    30                                       144     Count coming in to IF
+    30              1                          6     	if (!intf.rst_n) begin
+    35              1                         58     	else if (intf.rd_en && count != 0) begin
+    39              1                         80     	else begin
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    40                                        80     Count coming in to IF
+    40              1                         15     		if (intf.empty && intf.rd_en)
+    42              1                         65     		else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    48                                       113     Count coming in to IF
+    48              1                          4     	if (!intf.rst_n) begin
+    51              1                        109     	else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    52                                       109     Count coming in to IF
+    52              1                         35     		if	( ({intf.wr_en, intf.rd_en} == 2'b10) && !intf.full) 
+    54              1                         28     		else if ( ({intf.wr_en, intf.rd_en} == 2'b01) && !intf.empty)
+    56              1                          1     		else if (({intf.wr_en, intf.rd_en} == 2'b11) && intf.full)
+    58              1                          2     		else if (({intf.wr_en, intf.rd_en} == 2'b11) && intf.empty)
+                                              43     All False Count
+Branch totals: 5 hits of 5 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    63                                        68     Count coming in to IF
+    63              1                          4     assign intf.full = (count == intf.FIFO_DEPTH)? 1 : 0;
+    63              2                         64     assign intf.full = (count == intf.FIFO_DEPTH)? 1 : 0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    64                                        68     Count coming in to IF
+    64              1                          7     assign intf.empty = (count == 0)? 1 : 0;
+    64              2                         61     assign intf.empty = (count == 0)? 1 : 0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                        68     Count coming in to IF
+    65              1                         11     assign intf.almostfull = (count == fifo_if.FIFO_DEPTH - 1)? 1 : 0; 
+    65              2                         57     assign intf.almostfull = (count == fifo_if.FIFO_DEPTH - 1)? 1 : 0; 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    66                                        68     Count coming in to IF
+    66              1                          8     assign intf.almostempty = (count == 1)? 1 : 0;
+    66              2                         60     assign intf.almostempty = (count == 1)? 1 : 0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      24        23         1    95.83%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top/dut --
+
+  File FIFO.sv
+----------------Focused Condition View-------------------
+Line       15 Item    1  (intf.wr_en && (count < intf.FIFO_DEPTH))
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+                 intf.wr_en         Y
+  (count < intf.FIFO_DEPTH)         Y
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  intf.wr_en_0                 -                             
+  Row   2:          1  intf.wr_en_1                 (count < intf.FIFO_DEPTH)     
+  Row   3:          1  (count < intf.FIFO_DEPTH)_0  intf.wr_en                    
+  Row   4:          1  (count < intf.FIFO_DEPTH)_1  intf.wr_en                    
+
+----------------Focused Condition View-------------------
+Line       22 Item    1  (intf.full & intf.wr_en)
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+   intf.full         N  '_0' not hit             Hit '_0'
+  intf.wr_en         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  intf.full_0           intf.wr_en                    
+  Row   2:          1  intf.full_1           intf.wr_en                    
+  Row   3:          1  intf.wr_en_0          intf.full                     
+  Row   4:          1  intf.wr_en_1          intf.full                     
+
+----------------Focused Condition View-------------------
+Line       35 Item    1  (intf.rd_en && (count != 0))
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+    intf.rd_en         Y
+  (count != 0)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  intf.rd_en_0          -                             
+  Row   2:          1  intf.rd_en_1          (count != 0)                  
+  Row   3:          1  (count != 0)_0        intf.rd_en                    
+  Row   4:          1  (count != 0)_1        intf.rd_en                    
+
+----------------Focused Condition View-------------------
+Line       40 Item    1  (intf.empty && intf.rd_en)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+  intf.empty         Y
+  intf.rd_en         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  intf.empty_0          -                             
+  Row   2:          1  intf.empty_1          intf.rd_en                    
+  Row   3:          1  intf.rd_en_0          intf.empty                    
+  Row   4:          1  intf.rd_en_1          intf.empty                    
+
+----------------Focused Condition View-------------------
+Line       52 Item    1  ((~intf.rd_en && intf.wr_en) && ~intf.full)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+  intf.rd_en         Y
+  intf.wr_en         Y
+   intf.full         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  intf.rd_en_0          (~intf.full && intf.wr_en)    
+  Row   2:          1  intf.rd_en_1          -                             
+  Row   3:          1  intf.wr_en_0          ~intf.rd_en                   
+  Row   4:          1  intf.wr_en_1          (~intf.full && ~intf.rd_en)   
+  Row   5:          1  intf.full_0           (~intf.rd_en && intf.wr_en)   
+  Row   6:          1  intf.full_1           (~intf.rd_en && intf.wr_en)   
+
+----------------Focused Condition View-------------------
+Line       54 Item    1  ((intf.rd_en && ~intf.wr_en) && ~intf.empty)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+  intf.rd_en         Y
+  intf.wr_en         Y
+  intf.empty         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  intf.rd_en_0          -                             
+  Row   2:          1  intf.rd_en_1          (~intf.empty && ~intf.wr_en)  
+  Row   3:          1  intf.wr_en_0          (~intf.empty && intf.rd_en)   
+  Row   4:          1  intf.wr_en_1          intf.rd_en                    
+  Row   5:          1  intf.empty_0          (intf.rd_en && ~intf.wr_en)   
+  Row   6:          1  intf.empty_1          (intf.rd_en && ~intf.wr_en)   
+
+----------------Focused Condition View-------------------
+Line       56 Item    1  ((intf.rd_en && intf.wr_en) && intf.full)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+  intf.rd_en         Y
+  intf.wr_en         Y
+   intf.full         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  intf.rd_en_0          -                             
+  Row   2:          1  intf.rd_en_1          (intf.full && intf.wr_en)     
+  Row   3:          1  intf.wr_en_0          intf.rd_en                    
+  Row   4:          1  intf.wr_en_1          (intf.full && intf.rd_en)     
+  Row   5:          1  intf.full_0           (intf.rd_en && intf.wr_en)    
+  Row   6:          1  intf.full_1           (intf.rd_en && intf.wr_en)    
+
+----------------Focused Condition View-------------------
+Line       58 Item    1  ((intf.rd_en && intf.wr_en) && intf.empty)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+  intf.rd_en         Y
+  intf.wr_en         Y
+  intf.empty         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  intf.rd_en_0          -                             
+  Row   2:          1  intf.rd_en_1          (intf.empty && intf.wr_en)    
+  Row   3:          1  intf.wr_en_0          intf.rd_en                    
+  Row   4:          1  intf.wr_en_1          (intf.empty && intf.rd_en)    
+  Row   5:          1  intf.empty_0          (intf.rd_en && intf.wr_en)    
+  Row   6:          1  intf.empty_1          (intf.rd_en && intf.wr_en)    
+
+----------------Focused Condition View-------------------
+Line       63 Item    1  (count == intf.FIFO_DEPTH)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                  Input Term   Covered  Reason for no coverage   Hint
+                 -----------  --------  -----------------------  --------------
+  (count == intf.FIFO_DEPTH)         Y
+
+     Rows:       Hits  FEC Target                    Non-masking condition(s)      
+ ---------  ---------  --------------------          -------------------------     
+  Row   1:          1  (count == intf.FIFO_DEPTH)_0  -                             
+  Row   2:          1  (count == intf.FIFO_DEPTH)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       64 Item    1  (count == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  (count == 0)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (count == 0)_0        -                             
+  Row   2:          1  (count == 0)_1        -                             
+
+----------------Focused Condition View-------------------
+Line       65 Item    1  (count == (fifo_if.FIFO_DEPTH - 1))
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                           Input Term   Covered  Reason for no coverage   Hint
+                          -----------  --------  -----------------------  --------------
+  (count == (fifo_if.FIFO_DEPTH - 1))         Y
+
+     Rows:       Hits  FEC Target                             Non-masking condition(s)      
+ ---------  ---------  --------------------                   -------------------------     
+  Row   1:          1  (count == (fifo_if.FIFO_DEPTH - 1))_0  -                             
+  Row   2:          1  (count == (fifo_if.FIFO_DEPTH - 1))_1  -                             
+
+----------------Focused Condition View-------------------
+Line       66 Item    1  (count == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  (count == 1)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (count == 1)_0        -                             
+  Row   2:          1  (count == 1)_1        -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      28        28         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File FIFO.sv
+    1                                                module FIFO (FIFO_if.DUT intf);
+    2                                                
+    3                                                reg [intf.FIFO_WIDTH - 1 : 0] mem [intf.FIFO_DEPTH - 1 : 0];
+    4                                                
+    5                                                reg [intf.max_fifo_addr - 1 : 0] wr_ptr;
+    6                                                reg [intf.max_fifo_addr - 1 : 0] rd_ptr;
+    7                                                reg [intf.max_fifo_addr : 0] count;
+    8                                                
+    9               1                        144     always @(posedge intf.clk or negedge intf.rst_n) begin
+    10                                               	if (!intf.rst_n) begin
+    11              1                          6     		wr_ptr <= 0;
+    12              1                          6     		intf.overflow <= 0;
+    13              1                          6     		intf.wr_ack <= 1'b0;
+    14                                               	end
+    15                                               	else if (intf.wr_en && count < intf.FIFO_DEPTH) begin
+    16              1                         66     		mem[wr_ptr] <= intf.data_in;
+    17              1                         66     		intf.wr_ack <= 1;
+    18              1                         66     		wr_ptr <= wr_ptr + 1;
+    19                                               	end
+    20                                               	else begin 
+    21              1                         72     		intf.wr_ack <= 0; 
+    22                                               		if (intf.full & intf.wr_en)
+    23              1                         10     			intf.overflow <= 1;
+    24                                               		else
+    25              1                         62     			intf.overflow <= 0;
+    26                                               	end
+    27                                               end
+    28                                               
+    29              1                        144     always @(posedge intf.clk or negedge intf.rst_n) begin
+    30                                               	if (!intf.rst_n) begin
+    31              1                          6     		rd_ptr <= 0;
+    32              1                          6     		intf.underflow <= 0;
+    33              1                          6     		intf.data_out <= 16'hxxxx;
+    34                                               	end
+    35                                               	else if (intf.rd_en && count != 0) begin
+    36              1                         58     		intf.data_out <= mem[rd_ptr];
+    37              1                         58     		rd_ptr <= rd_ptr + 1;
+    38                                               	end
+    39                                               	else begin
+    40                                               		if (intf.empty && intf.rd_en)
+    41              1                         15     			intf.underflow <= 1;
+    42                                               		else
+    43              1                         65     			intf.underflow <= 0;
+    44                                               	end 
+    45                                               end
+    46                                               
+    47              1                        113     always @(posedge intf.clk or negedge intf.rst_n) begin
+    48                                               	if (!intf.rst_n) begin
+    49              1                          4     		count <= 0;
+    50                                               	end
+    51                                               	else begin
+    52                                               		if	( ({intf.wr_en, intf.rd_en} == 2'b10) && !intf.full) 
+    53              1                         35     			count <= count + 1;
+    54                                               		else if ( ({intf.wr_en, intf.rd_en} == 2'b01) && !intf.empty)
+    55              1                         28     			count <= count - 1;
+    56                                               		else if (({intf.wr_en, intf.rd_en} == 2'b11) && intf.full)
+    57              1                          1                 count <= count - 1; 
+    58                                               		else if (({intf.wr_en, intf.rd_en} == 2'b11) && intf.empty)
+    59              1                          2                 count <= count + 1;
+    60                                               	end
+    61                                               end
+    62                                               
+    63              1                         69     assign intf.full = (count == intf.FIFO_DEPTH)? 1 : 0;
+    64              1                         69     assign intf.empty = (count == 0)? 1 : 0;
+    65              1                         69     assign intf.almostfull = (count == fifo_if.FIFO_DEPTH - 1)? 1 : 0; 
+    66              1                         69     assign intf.almostempty = (count == 1)? 1 : 0;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         20        20         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                        count[3-0]           1           1      100.00 
+                                       rd_ptr[2-0]           1           1      100.00 
+                                       wr_ptr[2-0]           1           1      100.00 
+
+Total Node Count     =         10 
+Toggled Node Count   =         10 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (20 of 20 bins)
+
+=================================================================================
+=== Instance: /top
+=== Design Unit: work.top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      10         9         1    90.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File top.sv
+    1                                                module top ();
+    2                                                    import pkg::*;
+    3                                                
+    4                                                    logic clk;
+    5                                                
+    6                                                    test_class test;
+    7                                                
+    8                                                    virtual FIFO_if vif;
+    9                                                
+    10                                                   FIFO_if fifo_if (clk);
+    11                                               
+    12                                                   FIFO dut (fifo_if);
+    13                                               
+    14                                                   bind FIFO assertions fifo_sva (intf);
+    15                                               
+    16                                                   initial begin
+    17              1                          1             clk = 0;
+    18              1                          1             forever
+    19              1                        284                 #5 clk = ~ clk;
+    19              2                        283     
+    20                                                   end
+    21                                               
+    22                                                   initial begin
+    23              1                          1             vif = fifo_if;
+    24              1                          1             test = new(vif);
+    25              1                          1             test.run_test();
+    26                                                   end
+    27                                               
+    28                                                   initial begin
+    29              1                          1             #1420;
+    30              1                          1             $stop;
+    31                                                   end
+    32                                               
+    33                                                   final begin
+    34              1                    ***0***             test.env.scb.report();
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /pkg
+=== Design Unit: work.pkg
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/pkg/sequence_class/Randomized_test_cases/#ublk#30487#85/immed__87
+                     sequence_class.svh(87)             0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20        19         1    95.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File scoreboard_class.svh
+------------------------------------IF Branch------------------------------------
+    30                                       141     Count coming in to IF
+    30              1                          4             if (!in_seq_item.rst_n) begin
+    40              1                        137             else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    48                                       137     Count coming in to IF
+    48              1                         66                 if (in_seq_item.wr_en && write_allowed) begin
+    53              1                         71                 else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    55                                        71     Count coming in to IF
+    55              1                         10                     if (current_full && in_seq_item.wr_en)
+    57              1                         61                     else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    62                                       137     Count coming in to IF
+    62              1                         58                 if (in_seq_item.rd_en && read_allowed) begin
+    67              1                         79                 else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    68                                        79     Count coming in to IF
+    68              1                         15                     if (current_empty && in_seq_item.rd_en)
+    70              1                         64                     else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    77                                       141     Count coming in to IF
+    77              1                         15             ex_seq_item.expected_full = (golden_mem.size() == FIFO_DEPTH) ? 1 : 0;
+    77              2                        126             ex_seq_item.expected_full = (golden_mem.size() == FIFO_DEPTH) ? 1 : 0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    78                                       141     Count coming in to IF
+    78              1                         28             ex_seq_item.expected_empty = (golden_mem.size() == 0) ? 1 : 0;
+    78              2                        113             ex_seq_item.expected_empty = (golden_mem.size() == 0) ? 1 : 0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    79                                       141     Count coming in to IF
+    79              1                         16             ex_seq_item.expected_almostfull = (golden_mem.size() == (FIFO_DEPTH - 1)) ? 1 : 0;
+    79              2                        125             ex_seq_item.expected_almostfull = (golden_mem.size() == (FIFO_DEPTH - 1)) ? 1 : 0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    80                                       141     Count coming in to IF
+    80              1                         12             ex_seq_item.expected_almostempty = (golden_mem.size() == 1) ? 1 : 0;
+    80              2                        129             ex_seq_item.expected_almostempty = (golden_mem.size() == 1) ? 1 : 0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    85                                       141     Count coming in to IF
+    85              1                        141             if (ex_seq_item.expected_data_out === out_seq_item.data_out &&
+    102             1                    ***0***             else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      20        12         8    60.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /pkg --
+
+  File scoreboard_class.svh
+----------------Focused Condition View-------------------
+Line       48 Item    1  (in_seq_item.wr_en && write_allowed)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+  in_seq_item.wr_en         Y
+      write_allowed         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  in_seq_item.wr_en_0   -                             
+  Row   2:          1  in_seq_item.wr_en_1   write_allowed                 
+  Row   3:          1  write_allowed_0       in_seq_item.wr_en             
+  Row   4:          1  write_allowed_1       in_seq_item.wr_en             
+
+----------------Focused Condition View-------------------
+Line       55 Item    1  (current_full && in_seq_item.wr_en)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+       current_full         Y
+  in_seq_item.wr_en         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  current_full_0        -                             
+  Row   2:          1  current_full_1        in_seq_item.wr_en             
+  Row   3:          1  in_seq_item.wr_en_0   current_full                  
+  Row   4:          1  in_seq_item.wr_en_1   current_full                  
+
+----------------Focused Condition View-------------------
+Line       62 Item    1  (in_seq_item.rd_en && read_allowed)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+  in_seq_item.rd_en         Y
+       read_allowed         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  in_seq_item.rd_en_0   -                             
+  Row   2:          1  in_seq_item.rd_en_1   read_allowed                  
+  Row   3:          1  read_allowed_0        in_seq_item.rd_en             
+  Row   4:          1  read_allowed_1        in_seq_item.rd_en             
+
+----------------Focused Condition View-------------------
+Line       68 Item    1  (current_empty && in_seq_item.rd_en)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+      current_empty         Y
+  in_seq_item.rd_en         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  current_empty_0       -                             
+  Row   2:          1  current_empty_1       in_seq_item.rd_en             
+  Row   3:          1  in_seq_item.rd_en_0   current_empty                 
+  Row   4:          1  in_seq_item.rd_en_1   current_empty                 
+
+----------------Focused Condition View-------------------
+Line       77 Item    1  (size(this.golden_mem) == 8)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                    Input Term   Covered  Reason for no coverage   Hint
+                   -----------  --------  -----------------------  --------------
+  (size(this.golden_mem) == 8)         Y
+
+     Rows:       Hits  FEC Target                      Non-masking condition(s)      
+ ---------  ---------  --------------------            -------------------------     
+  Row   1:          1  (size(this.golden_mem) == 8)_0  -                             
+  Row   2:          1  (size(this.golden_mem) == 8)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       78 Item    1  (size(this.golden_mem) == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                    Input Term   Covered  Reason for no coverage   Hint
+                   -----------  --------  -----------------------  --------------
+  (size(this.golden_mem) == 0)         Y
+
+     Rows:       Hits  FEC Target                      Non-masking condition(s)      
+ ---------  ---------  --------------------            -------------------------     
+  Row   1:          1  (size(this.golden_mem) == 0)_0  -                             
+  Row   2:          1  (size(this.golden_mem) == 0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       79 Item    1  (size(this.golden_mem) == (8 - 1))
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                          Input Term   Covered  Reason for no coverage   Hint
+                         -----------  --------  -----------------------  --------------
+  (size(this.golden_mem) == (8 - 1))         Y
+
+     Rows:       Hits  FEC Target                            Non-masking condition(s)      
+ ---------  ---------  --------------------                  -------------------------     
+  Row   1:          1  (size(this.golden_mem) == (8 - 1))_0  -                             
+  Row   2:          1  (size(this.golden_mem) == (8 - 1))_1  -                             
+
+----------------Focused Condition View-------------------
+Line       80 Item    1  (size(this.golden_mem) == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                    Input Term   Covered  Reason for no coverage   Hint
+                   -----------  --------  -----------------------  --------------
+  (size(this.golden_mem) == 1)         Y
+
+     Rows:       Hits  FEC Target                      Non-masking condition(s)      
+ ---------  ---------  --------------------            -------------------------     
+  Row   1:          1  (size(this.golden_mem) == 1)_0  -                             
+  Row   2:          1  (size(this.golden_mem) == 1)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       85 Item    1  ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && (ex_seq_item.expected_overflow === out_seq_item.overflow) && (ex_seq_item.expected_full === out_seq_item.full) && (ex_seq_item.expected_empty === out_seq_item.empty) && (ex_seq_item.expected_almostfull === out_seq_item.almostfull) && (ex_seq_item.expected_almostempty === out_seq_item.almostempty) && (ex_seq_item.expected_underflow === out_seq_item.underflow))
+Condition totals: 0 of 8 input terms covered = 0.00%
+
+                                                       Input Term   Covered  Reason for no coverage   Hint
+                                                      -----------  --------  -----------------------  --------------
+        (ex_seq_item.expected_data_out === out_seq_item.data_out)         N  '_0' not hit             Hit '_0'
+            (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack)         N  '_0' not hit             Hit '_0'
+        (ex_seq_item.expected_overflow === out_seq_item.overflow)         N  '_0' not hit             Hit '_0'
+                (ex_seq_item.expected_full === out_seq_item.full)         N  '_0' not hit             Hit '_0'
+              (ex_seq_item.expected_empty === out_seq_item.empty)         N  '_0' not hit             Hit '_0'
+    (ex_seq_item.expected_almostfull === out_seq_item.almostfull)         N  '_0' not hit             Hit '_0'
+  (ex_seq_item.expected_almostempty === out_seq_item.almostempty)         N  '_0' not hit             Hit '_0'
+      (ex_seq_item.expected_underflow === out_seq_item.underflow)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                                                         Non-masking condition(s)      
+ ---------  ---------  --------------------                                               -------------------------     
+  Row   1:    ***0***  (ex_seq_item.expected_data_out === out_seq_item.data_out)_0        -                             
+  Row   2:          1  (ex_seq_item.expected_data_out === out_seq_item.data_out)_1        ((ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && ((ex_seq_item.expected_overflow === out_seq_item.overflow) && ((ex_seq_item.expected_full === out_seq_item.full) && ((ex_seq_item.expected_empty === out_seq_item.empty) && ((ex_seq_item.expected_almostfull === out_seq_item.almostfull) && ((ex_seq_item.expected_almostempty === out_seq_item.almostempty) && (ex_seq_item.expected_underflow === out_seq_item.underflow)))))))
+  Row   3:    ***0***  (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack)_0            (ex_seq_item.expected_data_out === out_seq_item.data_out)
+  Row   4:          1  (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack)_1            ((ex_seq_item.expected_data_out === out_seq_item.data_out) && ((ex_seq_item.expected_overflow === out_seq_item.overflow) && ((ex_seq_item.expected_full === out_seq_item.full) && ((ex_seq_item.expected_empty === out_seq_item.empty) && ((ex_seq_item.expected_almostfull === out_seq_item.almostfull) && ((ex_seq_item.expected_almostempty === out_seq_item.almostempty) && (ex_seq_item.expected_underflow === out_seq_item.underflow)))))))
+  Row   5:    ***0***  (ex_seq_item.expected_overflow === out_seq_item.overflow)_0        ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack))
+  Row   6:          1  (ex_seq_item.expected_overflow === out_seq_item.overflow)_1        ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && ((ex_seq_item.expected_full === out_seq_item.full) && ((ex_seq_item.expected_empty === out_seq_item.empty) && ((ex_seq_item.expected_almostfull === out_seq_item.almostfull) && ((ex_seq_item.expected_almostempty === out_seq_item.almostempty) && (ex_seq_item.expected_underflow === out_seq_item.underflow))))))
+  Row   7:    ***0***  (ex_seq_item.expected_full === out_seq_item.full)_0                ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && (ex_seq_item.expected_overflow === out_seq_item.overflow))
+  Row   8:          1  (ex_seq_item.expected_full === out_seq_item.full)_1                ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && (ex_seq_item.expected_overflow === out_seq_item.overflow) && ((ex_seq_item.expected_empty === out_seq_item.empty) && ((ex_seq_item.expected_almostfull === out_seq_item.almostfull) && ((ex_seq_item.expected_almostempty === out_seq_item.almostempty) && (ex_seq_item.expected_underflow === out_seq_item.underflow)))))
+  Row   9:    ***0***  (ex_seq_item.expected_empty === out_seq_item.empty)_0              ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && (ex_seq_item.expected_overflow === out_seq_item.overflow) && (ex_seq_item.expected_full === out_seq_item.full))
+ Row   10:          1  (ex_seq_item.expected_empty === out_seq_item.empty)_1              ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && (ex_seq_item.expected_overflow === out_seq_item.overflow) && (ex_seq_item.expected_full === out_seq_item.full) && ((ex_seq_item.expected_almostfull === out_seq_item.almostfull) && ((ex_seq_item.expected_almostempty === out_seq_item.almostempty) && (ex_seq_item.expected_underflow === out_seq_item.underflow))))
+ Row   11:    ***0***  (ex_seq_item.expected_almostfull === out_seq_item.almostfull)_0    ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && (ex_seq_item.expected_overflow === out_seq_item.overflow) && (ex_seq_item.expected_full === out_seq_item.full) && (ex_seq_item.expected_empty === out_seq_item.empty))
+ Row   12:          1  (ex_seq_item.expected_almostfull === out_seq_item.almostfull)_1    ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && (ex_seq_item.expected_overflow === out_seq_item.overflow) && (ex_seq_item.expected_full === out_seq_item.full) && (ex_seq_item.expected_empty === out_seq_item.empty) && ((ex_seq_item.expected_almostempty === out_seq_item.almostempty) && (ex_seq_item.expected_underflow === out_seq_item.underflow)))
+ Row   13:    ***0***  (ex_seq_item.expected_almostempty === out_seq_item.almostempty)_0  ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && (ex_seq_item.expected_overflow === out_seq_item.overflow) && (ex_seq_item.expected_full === out_seq_item.full) && (ex_seq_item.expected_empty === out_seq_item.empty) && (ex_seq_item.expected_almostfull === out_seq_item.almostfull))
+ Row   14:          1  (ex_seq_item.expected_almostempty === out_seq_item.almostempty)_1  ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && (ex_seq_item.expected_overflow === out_seq_item.overflow) && (ex_seq_item.expected_full === out_seq_item.full) && (ex_seq_item.expected_empty === out_seq_item.empty) && (ex_seq_item.expected_almostfull === out_seq_item.almostfull) && (ex_seq_item.expected_underflow === out_seq_item.underflow))
+ Row   15:    ***0***  (ex_seq_item.expected_underflow === out_seq_item.underflow)_0      ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && (ex_seq_item.expected_overflow === out_seq_item.overflow) && (ex_seq_item.expected_full === out_seq_item.full) && (ex_seq_item.expected_empty === out_seq_item.empty) && (ex_seq_item.expected_almostfull === out_seq_item.almostfull) && (ex_seq_item.expected_almostempty === out_seq_item.almostempty))
+ Row   16:          1  (ex_seq_item.expected_underflow === out_seq_item.underflow)_1      ((ex_seq_item.expected_data_out === out_seq_item.data_out) && (ex_seq_item.expected_wr_ack === out_seq_item.wr_ack) && (ex_seq_item.expected_overflow === out_seq_item.overflow) && (ex_seq_item.expected_full === out_seq_item.full) && (ex_seq_item.expected_empty === out_seq_item.empty) && (ex_seq_item.expected_almostfull === out_seq_item.almostfull) && (ex_seq_item.expected_almostempty === out_seq_item.almostempty))
+
+
+
+
+
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses         18        na        na        na
+            Covergroup Bins         28        28         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /pkg/coverage_collector_class/covg              100.00%        100          -    Covered              
+    covered/total bins:                                    28         28          -                      
+    missing/total bins:                                     0         28          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                         4          1          -    Covered              
+        bin auto[1]                                       137          1          -    Covered              
+    Coverpoint cp_wr_en                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wr_en_high                                     76          1          -    Covered              
+        bin wr_en_low                                      65          1          -    Covered              
+    Coverpoint cp_rd_en                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin rd_en_high                                     73          1          -    Covered              
+        bin rd_en_low                                      68          1          -    Covered              
+    Coverpoint cp_full                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin full_high                                      15          1          -    Covered              
+        bin full_low                                      126          1          -    Covered              
+    Coverpoint cp_almostfull                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin almostfull_high                                16          1          -    Covered              
+        bin almostfull_low                                125          1          -    Covered              
+    Coverpoint cp_empty                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin empty_high                                     28          1          -    Covered              
+        bin empty_low                                     113          1          -    Covered              
+    Coverpoint cp_almostempty                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin almostempty_high                               12          1          -    Covered              
+        bin almostempty_low                               129          1          -    Covered              
+    Coverpoint cp_overflow                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin overflow_high                                  10          1          -    Covered              
+        bin overflow_low                                  131          1          -    Covered              
+    Coverpoint cp_underflow                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin underflow_high                                 15          1          -    Covered              
+        bin underflow_low                                 126          1          -    Covered              
+    Coverpoint cp_wr_ack                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wr_ack_high                                    66          1          -    Covered              
+        bin wr_ack_low                                     75          1          -    Covered              
+    Cross illegal_wr                                  100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_to_full                                  9          1          -    Covered              
+    Cross legal_wr                                    100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_to_not_full                             62          1          -    Covered              
+    Cross almost_full_wr                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin almostfull_wr                              12          1          -    Covered              
+    Cross illegal_rd                                  100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_from_empty                              13          1          -    Covered              
+    Cross legal_rd                                    100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_from_empty                              53          1          -    Covered              
+    Cross almost_empty_rd                             100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin almostempty_rd                              5          1          -    Covered              
+    Cross wr_rd_empty                                 100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_op                                      32          1          -    Covered              
+    Cross wr_rd_full                                  100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_op                                      32          1          -    Covered              
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      4         4         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /pkg --
+
+  File scoreboard_class.svh
+----------------Focused Expression View-----------------
+Line       42 Item    1  (current_size == 8)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+           Input Term   Covered  Reason for no coverage   Hint
+          -----------  --------  -----------------------  --------------
+  (current_size == 8)         Y
+
+     Rows:       Hits  FEC Target             Non-masking condition(s)      
+ ---------  ---------  --------------------   -------------------------     
+  Row   1:          1  (current_size == 8)_0  -                             
+  Row   2:          1  (current_size == 8)_1  -                             
+
+----------------Focused Expression View-----------------
+Line       43 Item    1  (current_size == 0)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+           Input Term   Covered  Reason for no coverage   Hint
+          -----------  --------  -----------------------  --------------
+  (current_size == 0)         Y
+
+     Rows:       Hits  FEC Target             Non-masking condition(s)      
+ ---------  ---------  --------------------   -------------------------     
+  Row   1:          1  (current_size == 0)_0  -                             
+  Row   2:          1  (current_size == 0)_1  -                             
+
+----------------Focused Expression View-----------------
+Line       44 Item    1  (current_size < 8)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+          Input Term   Covered  Reason for no coverage   Hint
+         -----------  --------  -----------------------  --------------
+  (current_size < 8)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (current_size < 8)_0  -                             
+  Row   2:          1  (current_size < 8)_1  -                             
+
+----------------Focused Expression View-----------------
+Line       45 Item    1  (current_size != 0)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+           Input Term   Covered  Reason for no coverage   Hint
+          -----------  --------  -----------------------  --------------
+  (current_size != 0)         Y
+
+     Rows:       Hits  FEC Target             Non-masking condition(s)      
+ ---------  ---------  --------------------   -------------------------     
+  Row   1:          1  (current_size != 0)_0  -                             
+  Row   2:          1  (current_size != 0)_1  -                             
+
+
+
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     263       249        14    94.67%
+
+================================Statement Details================================
+
+Statement Coverage for instance /pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File sequence_item_class.svh
+    1                                                class sequence_item_class;
+    2                                                    // Inputs
+    3                                                    rand logic [15 : 0] data_in;
+    4                                                    logic rst_n;
+    5                                                    rand logic wr_en;
+    6                                                    rand logic rd_en;
+    7                                                    
+    8                                                    // Actual Outpus
+    9                                                    logic [15 : 0] data_out;
+    10                                                   logic wr_ack;
+    11                                                   logic overflow;
+    12                                                   logic full;
+    13                                                   logic empty;
+    14                                                   logic almostfull;
+    15                                                   logic almostempty;
+    16                                                   logic underflow;
+    17                                                   
+    18                                                   // Excecated Outputs
+    19                                                   logic [15 : 0] expected_data_out;
+    20                                                   logic expected_wr_ack;
+    21                                                   logic expected_overflow;
+    22                                                   logic expected_full;
+    23                                                   logic expected_empty;
+    24                                                   logic expected_almostfull;
+    25                                                   logic expected_almostempty;
+    26                                                   logic expected_underflow;
+    27                                                   
+    28                                                   function new ();
+    29              1                        987             data_in = 0;
+    30              1                        987             rst_n = 0;
+    31              1                        987             wr_en = 0;
+    32              1                        987             rd_en = 0;
+    33                                                   endfunction
+    34                                               
+    35                                                   constraint data_patterns {
+    36                                                       data_in dist {
+    37                                                           16'h0000 := 5,
+    38                                                           16'hFFFF := 5,
+    39                                                           16'hAAAA := 5,
+    40                                                           16'h5555 := 5,
+    41                                                           [16'h0001:16'h00FF] := 20,
+    42                                                           [16'h0100:16'hFFFF] := 60
+    43                                                       };
+    44                                                   }
+    45                                               
+    46                                                   function print_tr (string name);
+    47              1                        141             $display("[%0p] Time : %0t | Inputs : DATA_IN = %0d , WR_EN = %0d , RD_EN = %0d RST_N = %0d", 
+    48                                                                 name, $realtime, data_in, wr_en, rd_en, rst_n);
+    49                                                   endfunction
+    50                                               
+    51                                                   function print_actual (string name);
+    52              1                        141             $display("[%0p] Time : %0t | Outputs : DATA_OUT = %0d , WR_ACK = %0d , OVERFLOW = %0d , FULL = %0d , EMPTY = %0d , ALMOSTFULL = %0d , ALMOSTEMPTY = %0d , UNDERFLOW = %0d",
+    53                                                                 name, $realtime, data_out, wr_ack, overflow, full, empty, almostfull, almostempty, underflow);
+    54                                                   endfunction
+    55                                               
+    56                                                   function print_expected (string name);
+    57              1                        141             $display("[%0p] Time : %0t | Outputs : DATA_OUT = %0d , WR_ACK = %0d , OVERFLOW = %0d , FULL = %0d , EMPTY = %0d , ALMOSTFULL = %0d , ALMOSTEMPTY = %0d , UNDERFLOW = %0d",
+
+  File sequencer_class.svh
+    1                                                class sequencer_class;
+    2                                                    sequence_item_class seq_item;
+    3                                                
+    4                                                    mailbox #(sequence_item_class) seqr_mb;
+    5                                                
+    6                                                    function new ();
+    7               1                          1             seqr_mb = new(1);
+
+  File sequence_class.svh
+    1                                                class sequence_class;
+    2                                                    sequence_item_class seq_item;
+    3                                                    sequencer_class seqr;
+    4                                                
+    5                                                    int num_transaction = 100;
+    6                                                
+    7                                                    task Assert_reset ();
+    8               1                          4             repeat (2) begin
+    9               1                          4                 seq_item = new();
+    10              1                          4                 seq_item.rst_n = 1'b0;
+    11              1                          4                 seq_item.wr_en = 1'b0;
+    12              1                          4                 seq_item.rd_en = 1'b0;
+    13              1                          4                 seq_item.data_in = $random;
+    14                                               
+    15              1                          4                 seqr.seqr_mb.put(seq_item);
+    16                                                       end
+    17                                                   endtask
+    18                                               
+    19                                                   task Release_reset ();
+    20              1                          2             repeat (2) begin
+    21              1                          2                 seq_item = new();
+    22              1                          2                 seq_item.rst_n = 1'b1;
+    23              1                          2                 seq_item.wr_en = 1'b0;
+    24              1                          2                 seq_item.rd_en = 1'b0;
+    25              1                          2                 seq_item.data_in = $random;
+    26                                               
+    27              1                          2                 seqr.seqr_mb.put(seq_item);
+    28                                                       end
+    29                                                   endtask
+    30                                               
+    31                                                   // Initialize FIFO
+    32                                                   task Initialize_FIFO ();
+    33              1                          8             repeat (8) begin
+    34              1                          8                 seq_item = new();
+    35              1                          8                 seq_item.rst_n = 1'b1;
+    36              1                          8                 seq_item.wr_en = 1'b1;
+    37              1                          8                 seq_item.rd_en = 1'b0;
+    38              1                          8                 seq_item.data_in = 0;
+    39                                               
+    40              1                          8                 seqr.seqr_mb.put(seq_item);
+    41                                                       end
+    42                                                   endtask
+    43                                               
+    44                                                   // write to full FIFO
+    45                                                   task write_to_full_FIFO ();
+    46              1                          8             repeat (8) begin
+    47              1                          8                 seq_item = new();
+    48              1                          8                 seq_item.rst_n = 1'b1;
+    49              1                          8                 seq_item.wr_en = 1'b1;
+    50              1                          8                 seq_item.rd_en = 1'b0;
+    51              1                          8                 seq_item.data_in = $random;
+    52                                               
+    53              1                          8                 seqr.seqr_mb.put(seq_item);
+    54                                                       end
+    55                                                   endtask
+    56                                               
+    57                                                   // read operations
+    58                                                   task read_operations ();
+    59              1                          8             repeat (8) begin
+    60              1                          8                 seq_item = new();
+    61              1                          8                 seq_item.rst_n = 1'b1;
+    62              1                          8                 seq_item.wr_en = 1'b0;
+    63              1                          8                 seq_item.rd_en = 1'b1;
+    64              1                          8                 seq_item.data_in = 0;
+    65                                               
+    66              1                          8                 seqr.seqr_mb.put(seq_item);
+    67                                                       end
+    68                                                   endtask
+    69                                               
+    70                                                   // read from empty FIFO
+    71                                                   task read_from_empty_FIFO ();
+    72              1                          8             repeat (8) begin
+    73              1                          8                 seq_item = new();
+    74              1                          8                 seq_item.rst_n = 1'b1;
+    75              1                          8                 seq_item.wr_en = 1'b0;
+    76              1                          8                 seq_item.rd_en = 1'b1;
+    77              1                          8                 seq_item.data_in = 0;
+    78                                               
+    79              1                          8                 seqr.seqr_mb.put(seq_item);
+    80                                                       end
+    81                                                   endtask
+    82                                               
+    83                                                   // Randomized test cases
+    84                                                   task Randomized_test_cases ();
+    85              1                        100             repeat (num_transaction) begin
+    86              1                        100                 seq_item = new();
+    87                                                           assert(seq_item.randomize());
+    88              1                        100                 seq_item.rst_n = 1'b1;
+    89                                                           
+    90              1                        100                 seqr.seqr_mb.put(seq_item);
+
+  File driver_class.svh
+    1                                                class driver_class;
+    2                                                    sequence_item_class seq_item;
+    3                                                    sequencer_class seqr;
+    4                                                
+    5                                                    virtual FIFO_if vif;
+    6                                                
+    7                                                    function new (virtual FIFO_if vif);
+    8               1                          1             this.vif = vif;
+    9                                                    endfunction
+    10                                               
+    11                                                   task run_driv ();
+    12              1                          1             forever begin
+    13              1                        139                 seq_item = new();
+    14                                               
+    15              1                        139                 @(vif.driv_cb);
+    16              1                        139                 seqr.seqr_mb.get(seq_item);
+    17                                               
+    18              1                        138                 vif.driv_cb.rst_n <= seq_item.rst_n;
+    19              1                        138                 vif.driv_cb.data_in <= seq_item.data_in;
+    20              1                        138                 vif.driv_cb.wr_en <= seq_item.wr_en;
+    21              1                        138                 vif.driv_cb.rd_en <= seq_item.rd_en;
+
+  File monitor_class.svh
+    1                                                class monitor_class;
+    2                                                    sequence_item_class in_seq_item;
+    3                                                    sequence_item_class out_seq_item;
+    4                                                
+    5                                                    virtual FIFO_if vif;
+    6                                                
+    7               1                          1         mailbox #(sequence_item_class) mon_out_2_scb = new(1);
+    8               1                          1         mailbox #(sequence_item_class) mon_out_2_cov = new(1);
+    9                                                
+    10              1                          1         mailbox #(sequence_item_class) mon_in_2_scb = new(1);
+    11              1                          1         mailbox #(sequence_item_class) mon_in_2_cov = new(1);
+    12                                               
+    13                                                   function new (virtual FIFO_if vif, mailbox #(sequence_item_class) mon_out_2_scb, mailbox #(sequence_item_class) mon_out_2_cov,
+    14                                                                 mailbox #(sequence_item_class) mon_in_2_scb, mailbox #(sequence_item_class) mon_in_2_cov);
+    15              1                          1             this.vif = vif;
+    16              1                          1             this.mon_out_2_scb = mon_out_2_scb;
+    17              1                          1             this.mon_out_2_cov = mon_out_2_cov;
+    18                                               
+    19              1                          1             this.mon_in_2_scb = mon_in_2_scb;
+    20              1                          1             this.mon_in_2_cov = mon_in_2_cov;
+    21                                                   endfunction
+    22                                               
+    23                                                   task run_mon ();
+    24              1                          1             @(vif.mon_cb);
+    25                                                       
+    26              1                          1             forever begin
+    27              1                        142                 in_seq_item = new();
+    28              1                        142                 out_seq_item = new();
+    29                                               
+    30              1                        142                 @(vif.mon_cb);
+    31                                                           
+    32                                                           // Capture INPUTS
+    33              1                        141                 in_seq_item.rst_n = vif.mon_cb.rst_n;
+    34              1                        141                 in_seq_item.data_in = vif.mon_cb.data_in;
+    35              1                        141                 in_seq_item.wr_en = vif.mon_cb.wr_en;
+    36              1                        141                 in_seq_item.rd_en = vif.mon_cb.rd_en;
+    37                                                           
+    38                                                           // Capture OUTPUTS
+    39              1                        141                 out_seq_item.data_out = vif.mon_cb.data_out;
+    40              1                        141                 out_seq_item.wr_ack = vif.mon_cb.wr_ack;
+    41              1                        141                 out_seq_item.overflow = vif.mon_cb.overflow;
+    42              1                        141                 out_seq_item.full = vif.mon_cb.full;
+    43              1                        141                 out_seq_item.empty = vif.mon_cb.empty;
+    44              1                        141                 out_seq_item.almostfull = vif.mon_cb.almostfull; 
+    45              1                        141                 out_seq_item.almostempty = vif.mon_cb.almostempty;
+    46              1                        141                 out_seq_item.underflow = vif.mon_cb.underflow;
+    47                                               
+    48              1                        141                 mon_out_2_scb.put(out_seq_item);
+    49              1                        141                 mon_out_2_cov.put(out_seq_item);
+    50                                               
+    51              1                        141                 mon_in_2_scb.put(in_seq_item);
+    52              1                        141                 mon_in_2_cov.put(in_seq_item);
+
+  File agent_class.svh
+    1                                                class agent_class;
+    2                                                    sequencer_class seqr;
+    3                                                    driver_class driv;
+    4                                                    monitor_class mon;
+    5                                                
+    6                                                    virtual FIFO_if vif;
+    7                                                
+    8                                                
+    9               1                          1         mailbox #(sequence_item_class) mon_out_2_scb = new(1);
+    10              1                          1         mailbox #(sequence_item_class) mon_out_2_cov = new(1);
+    11                                               
+    12              1                          1         mailbox #(sequence_item_class) mon_in_2_scb = new(1);
+    13              1                          1         mailbox #(sequence_item_class) mon_in_2_cov = new(1);
+    14                                               
+    15                                                   function new (virtual FIFO_if vif,
+    16                                                                 mailbox #(sequence_item_class) mon_out_2_scb, mailbox #(sequence_item_class) mon_out_2_cov,
+    17                                                                 mailbox #(sequence_item_class) mon_in_2_scb, mailbox #(sequence_item_class) mon_in_2_cov);
+    18              1                          1             this.vif = vif;
+    19              1                          1             this.mon_out_2_scb = mon_out_2_scb;
+    20              1                          1             this.mon_out_2_cov = mon_out_2_cov;
+    21              1                          1             this.mon_in_2_scb = mon_in_2_scb;
+    22              1                          1             this.mon_in_2_cov = mon_in_2_cov;
+    23                                               
+    24              1                          1             build_agent();
+    25              1                          1             connect_agent();
+    26                                                   endfunction
+    27                                               
+    28                                                   function build_agent ();
+    29              1                          1             driv = new(vif);
+    30              1                          1             mon = new(vif, mon_out_2_scb, mon_out_2_cov, mon_in_2_scb, mon_in_2_cov);
+    31              1                          1             seqr = new();
+    32                                                   endfunction
+    33                                               
+    34                                                   function connect_agent ();
+    35              1                          1             driv.seqr = seqr;
+    36                                                   endfunction
+    37                                               
+    38                                                   task run_agent ();
+    39                                                       fork
+    40              1                          1                 driv.run_driv();
+    41              1                          1                 mon.run_mon();
+
+  File scoreboard_class.svh
+    1                                                class scoreboard_class;
+    2                                                    sequence_item_class in_seq_item;
+    3                                                    sequence_item_class out_seq_item;
+    4                                                    sequence_item_class ex_seq_item;
+    5                                                
+    6                                                    parameter FIFO_WIDTH = 16;
+    7                                                    parameter FIFO_DEPTH = 8;
+    8                                                    logic [FIFO_WIDTH-1:0] golden_mem[$];
+    9               1                          1         logic [15 : 0] last_data_out = 16'hxxxx;
+    10                                               
+    11              1                          1         mailbox #(sequence_item_class) mon_out_2_scb = new(1);
+    12              1                          1         mailbox #(sequence_item_class) mon_in_2_scb = new(1);
+    13                                               
+    14              1                          1         int wr_ptr = 0;
+    15              1                          1         int rd_ptr = 0;
+    16              1                          1         int count = 0;
+    17                                                   
+    18              1                          1         int complete_operation = 0;
+    19              1                          1         int correct_count = 0;
+    20              1                          1         int error_count = 0;
+    21                                               
+    22                                                   function new (mailbox #(sequence_item_class) mon_out_2_scb, mailbox #(sequence_item_class) mon_in_2_scb);
+    23              1                          1             this.mon_out_2_scb = mon_out_2_scb;
+    24              1                          1             this.mon_in_2_scb = mon_in_2_scb;
+    25                                                   endfunction
+    26                                               
+    27                                                   function void golden_model(sequence_item_class in_seq_item, sequence_item_class ex_seq_item);
+    28                                                       parameter FIFO_DEPTH = 8;
+    29                                               
+    30                                                       if (!in_seq_item.rst_n) begin
+    31              1                          4                 golden_mem.delete();
+    32              1                          4                 ex_seq_item.expected_wr_ack = 0;
+    33              1                          4                 ex_seq_item.expected_overflow = 0;
+    34              1                          4                 ex_seq_item.expected_underflow = 0;
+    35              1                          4                 ex_seq_item.expected_full = 0;
+    36              1                          4                 ex_seq_item.expected_empty = 1;
+    37              1                          4                 ex_seq_item.expected_almostfull = 0;
+    38              1                          4                 ex_seq_item.expected_almostempty = 0;
+    39                                                       end
+    40                                                       else begin
+    41              1                        137                 int current_size = golden_mem.size();
+    42              1                        137                 logic current_full = (current_size == FIFO_DEPTH);
+    43              1                        137                 logic current_empty = (current_size == 0);
+    44              1                        137                 logic write_allowed = (current_size < FIFO_DEPTH);
+    45              1                        137                 logic read_allowed = (current_size != 0);
+    46                                                       
+    47                                                           // WRITE OPERATION
+    48                                                           if (in_seq_item.wr_en && write_allowed) begin
+    49              1                         66                     golden_mem.push_back(in_seq_item.data_in);
+    50              1                         66                     ex_seq_item.expected_wr_ack = 1;
+    51              1                         66                     ex_seq_item.expected_overflow = 0;
+    52                                                           end
+    53                                                           else begin
+    54              1                         71                     ex_seq_item.expected_wr_ack = 0;
+    55                                                               if (current_full && in_seq_item.wr_en)
+    56              1                         10                         ex_seq_item.expected_overflow = 1;
+    57                                                               else
+    58              1                         61                         ex_seq_item.expected_overflow = 0;
+    59                                                           end
+    60                                                       
+    61                                                           // READ OPERATION
+    62                                                           if (in_seq_item.rd_en && read_allowed) begin
+    63              1                         58                     ex_seq_item.expected_data_out = golden_mem.pop_front();
+    64              1                         58                     last_data_out = ex_seq_item.expected_data_out;
+    65              1                         58                     ex_seq_item.expected_underflow = 0;
+    66                                                           end
+    67                                                           else begin
+    68                                                               if (current_empty && in_seq_item.rd_en)
+    69              1                         15                         ex_seq_item.expected_underflow = 1;
+    70                                                               else
+    71              1                         64                         ex_seq_item.expected_underflow = 0;
+    72                                                               
+    73              1                         79                     ex_seq_item.expected_data_out = last_data_out;
+    74                                                           end
+    75                                                       end
+    76                                                   
+    77              1                        141             ex_seq_item.expected_full = (golden_mem.size() == FIFO_DEPTH) ? 1 : 0;
+    78              1                        141             ex_seq_item.expected_empty = (golden_mem.size() == 0) ? 1 : 0;
+    79              1                        141             ex_seq_item.expected_almostfull = (golden_mem.size() == (FIFO_DEPTH - 1)) ? 1 : 0;
+    80              1                        141             ex_seq_item.expected_almostempty = (golden_mem.size() == 1) ? 1 : 0;
+    81                                                   endfunction
+    82                                               
+    83                                               
+    84                                                   function void compare (sequence_item_class in_seq_item, sequence_item_class out_seq_item, sequence_item_class ex_seq_item);
+    85                                                       if (ex_seq_item.expected_data_out === out_seq_item.data_out &&
+    86                                                           ex_seq_item.expected_wr_ack === out_seq_item.wr_ack &&
+    87                                                           ex_seq_item.expected_overflow === out_seq_item.overflow &&
+    88                                                           ex_seq_item.expected_full === out_seq_item.full &&
+    89                                                           ex_seq_item.expected_empty === out_seq_item.empty &&
+    90                                                           ex_seq_item.expected_almostfull === out_seq_item.almostfull &&
+    91                                                           ex_seq_item.expected_almostempty === out_seq_item.almostempty &&
+    92                                                           ex_seq_item.expected_underflow === out_seq_item.underflow) begin
+    93                                                           
+    94              1                        141                 in_seq_item.print_tr("TRANSACTION");
+    95              1                        141                 out_seq_item.print_actual("ACTUAL");
+    96              1                        141                 ex_seq_item.print_expected("EXPECTED");
+    97              1                        141                 $display("[PASS] Time: %0t | All outputs matched!", $realtime);
+    98              1                        141                 $display("");
+    99              1                        141                 complete_operation++;
+    100             1                        141                 correct_count++;
+    101                                                      end
+    102                                                      else begin
+    103             1                    ***0***                 in_seq_item.print_tr("TRANSACTION");
+    104             1                    ***0***                 out_seq_item.print_actual("ACTUAL");
+    105             1                    ***0***                 ex_seq_item.print_expected("EXPECTED");
+    106             1                    ***0***                 $display("[FAIL] Time: %0t", $realtime);
+    107             1                    ***0***                 $display("");
+    108             1                    ***0***                 complete_operation++;
+    109             1                    ***0***                 error_count++;
+    110                                                      end
+    111                                                  endfunction
+    112                                              
+    113                                                  task run_scoreboard ();
+    114             1                          1             forever begin
+    115             1                        142                 in_seq_item = new();
+    116             1                        142                 out_seq_item = new();
+    117             1                        142                 ex_seq_item = new();
+    118                                              
+    119             1                        142                 mon_out_2_scb.get(out_seq_item);
+    120             1                        141                 mon_in_2_scb.get(in_seq_item);
+    121                                              
+    122             1                        141                 golden_model(in_seq_item, ex_seq_item);
+    123             1                        141                 compare(in_seq_item, out_seq_item, ex_seq_item);
+    124                                                      end
+    125                                                  endtask
+    126                                              
+    127                                                  function void report();
+    128             1                    ***0***             $display("\n==================================================");
+    129             1                    ***0***             $display("               FINAL TESTBENCH REPORT             ");
+    130             1                    ***0***             $display("==================================================");
+    131             1                    ***0***     		$display(" Total Operations Completed Successfully : %0d", complete_operation);
+    132             1                    ***0***             $display(" Total Operations Executed Successfully  : %0d", correct_count);
+    133             1                    ***0***             $display(" Total Errors Detected                   : %0d", error_count);
+    134             1                    ***0***             $display("==================================================\n");
+
+  File coverage_collector_class.svh
+    1                                                class coverage_collector_class;
+    2                                                    sequence_item_class in_seq_item;
+    3                                                    sequence_item_class out_seq_item;
+    4                                                
+    5               1                          1         mailbox #(sequence_item_class) mon_out_2_cov = new(1);
+    6               1                          1         mailbox #(sequence_item_class) mon_in_2_cov = new(1);
+    7                                                
+    8                                                    covergroup covg;
+    9                                                        cp_rst_n : coverpoint in_seq_item.rst_n;
+    10                                               
+    11                                                       cp_wr_en : coverpoint in_seq_item.wr_en {
+    12                                                           bins wr_en_high = {1};
+    13                                                           bins wr_en_low = {0};
+    14                                                       }
+    15                                               
+    16                                                       cp_rd_en : coverpoint in_seq_item.rd_en {
+    17                                                           bins rd_en_high = {1};
+    18                                                           bins rd_en_low = {0};
+    19                                                       }
+    20                                               
+    21                                                       cp_full : coverpoint out_seq_item.full {
+    22                                                           bins full_high = {1};
+    23                                                           bins full_low = {0};
+    24                                                       }
+    25                                               
+    26                                                       cp_almostfull : coverpoint out_seq_item.almostfull {
+    27                                                           bins almostfull_high = {1};
+    28                                                           bins almostfull_low = {0};
+    29                                                       }
+    30                                               
+    31                                                       cp_empty : coverpoint out_seq_item.empty {
+    32                                                           bins empty_high = {1};
+    33                                                           bins empty_low = {0};
+    34                                                       }
+    35                                               
+    36                                                       cp_almostempty : coverpoint out_seq_item.almostempty {
+    37                                                           bins almostempty_high = {1};
+    38                                                           bins almostempty_low = {0};
+    39                                                       }
+    40                                               
+    41                                                       cp_overflow : coverpoint out_seq_item.overflow {
+    42                                                           bins overflow_high = {1};
+    43                                                           bins overflow_low = {0};
+    44                                                       }
+    45                                               
+    46                                                       cp_underflow : coverpoint out_seq_item.underflow {
+    47                                                           bins underflow_high = {1};
+    48                                                           bins underflow_low = {0};
+    49                                                       }
+    50                                               
+    51                                                       cp_wr_ack : coverpoint out_seq_item.wr_ack {
+    52                                                           bins wr_ack_high = {1};
+    53                                                           bins wr_ack_low = {0};
+    54                                                       }
+    55                                               
+    56                                                       illegal_wr : cross cp_wr_en, cp_full, cp_wr_ack, cp_overflow {
+    57                                                           bins wr_to_full = binsof(cp_wr_en.wr_en_high) && binsof(cp_full.full_high) && 
+    58                                                                             binsof(cp_wr_ack.wr_ack_low) && binsof(cp_overflow.overflow_high);
+    59                                                           option.cross_auto_bin_max = 0;
+    60                                                       }
+    61                                               
+    62                                                       legal_wr : cross cp_wr_en, cp_full, cp_wr_ack, cp_overflow {
+    63                                                           bins wr_to_not_full = binsof(cp_wr_en.wr_en_high) && binsof(cp_full.full_low) &&
+    64                                                                                 binsof(cp_wr_ack.wr_ack_high) && binsof(cp_overflow.overflow_low);
+    65                                                           option.cross_auto_bin_max = 0;
+    66                                                       }
+    67                                               
+    68                                                       almost_full_wr : cross cp_wr_en, cp_almostfull {
+    69                                                           bins almostfull_wr = binsof(cp_wr_en.wr_en_high) && binsof(cp_almostfull.almostfull_high);
+    70                                                           option.cross_auto_bin_max = 0;
+    71                                                       }
+    72                                               
+    73                                                       illegal_rd : cross cp_rd_en, cp_empty, cp_underflow {
+    74                                                           bins wr_from_empty = binsof(cp_rd_en.rd_en_high) && binsof(cp_empty.empty_high) && binsof(cp_underflow.underflow_high);
+    75                                                           option.cross_auto_bin_max = 0;
+    76                                                       }
+    77                                               
+    78                                                       legal_rd : cross cp_rd_en, cp_empty, cp_underflow {
+    79                                                           bins wr_from_empty = binsof(cp_rd_en.rd_en_high) && binsof(cp_empty.empty_low) && binsof(cp_underflow.underflow_low);
+    80                                                           option.cross_auto_bin_max = 0;
+    81                                                       }
+    82                                               
+    83                                                       almost_empty_rd : cross cp_rd_en, cp_almostempty {
+    84                                                           bins almostempty_rd = binsof(cp_rd_en.rd_en_high) && binsof(cp_almostempty.almostempty_high);
+    85                                                           option.cross_auto_bin_max = 0;
+    86                                                       }
+    87                                               
+    88                                                       wr_rd_empty : cross cp_wr_en, cp_rd_en, cp_wr_ack, cp_empty {
+    89                                                           bins wr_op = binsof(cp_wr_en.wr_en_high) && binsof(cp_rd_en.rd_en_high) && binsof(cp_empty.empty_low);
+    90                                                           option.cross_auto_bin_max = 0;
+    91                                                       }
+    92                                               
+    93                                                       wr_rd_full : cross cp_wr_en, cp_rd_en, cp_wr_ack, cp_full {
+    94                                                           bins wr_op = binsof(cp_wr_en.wr_en_high) && binsof(cp_rd_en.rd_en_high) && binsof(cp_full.full_low);
+    95                                                           option.cross_auto_bin_max = 0;
+    96                                                       }
+    97                                                   endgroup
+    98                                               
+    99                                                   function new (mailbox #(sequence_item_class) mon_out_2_cov, mailbox #(sequence_item_class) mon_in_2_cov);
+    100             1                          1             covg = new();
+    101             1                          1             this.mon_out_2_cov = mon_out_2_cov;
+    102             1                          1             this.mon_in_2_cov = mon_in_2_cov;
+    103                                                  endfunction
+    104                                              
+    105                                                  task run_coverage ();
+    106             1                          1             forever begin
+    107             1                        142                 mon_out_2_cov.get(out_seq_item);
+    108             1                        141                 mon_in_2_cov.get(in_seq_item);
+    109             1                        141                 covg.sample();
+
+  File environment_class.svh
+    1                                                class environment_class;
+    2                                                    agent_class agt;
+    3                                                    scoreboard_class scb;
+    4                                                    coverage_collector_class cvg;
+    5                                                
+    6                                                    virtual FIFO_if vif;
+    7                                                
+    8                                                
+    9               1                          1         mailbox #(sequence_item_class) mon_out_2_scb = new(1);
+    10              1                          1         mailbox #(sequence_item_class) mon_out_2_cov = new(1);
+    11                                               
+    12              1                          1         mailbox #(sequence_item_class) mon_in_2_scb = new(1);
+    13              1                          1         mailbox #(sequence_item_class) mon_in_2_cov = new(1);
+    14                                               
+    15                                                   function new (virtual FIFO_if vif);
+    16              1                          1             this.vif = vif;
+    17              1                          1             build_env();
+    18                                                   endfunction
+    19                                               
+    20                                                   function build_env ();
+    21              1                          1             agt = new(vif, mon_out_2_scb, mon_out_2_cov, mon_in_2_scb, mon_in_2_cov);
+    22              1                          1             scb = new(mon_out_2_scb, mon_in_2_scb);
+    23              1                          1             cvg = new(mon_out_2_cov, mon_in_2_cov);
+    24                                                   endfunction
+    25                                               
+    26                                                   task run_env ();
+    27                                                       fork
+    28              1                          1                 agt.run_agent();
+    29              1                          1                 scb.run_scoreboard();
+    30              1                          1                 cvg.run_coverage();
+
+  File test_class.svh
+    1                                                class test_class;
+    2                                                    environment_class env;
+    3                                                    sequence_class seq;
+    4                                                
+    5                                                    virtual FIFO_if vif;
+    6                                                
+    7                                                
+    8                                                    function new (virtual FIFO_if vif);
+    9               1                          1             this.vif = vif;
+    10              1                          1             build_test();
+    11              1                          1             connect_test();
+    12                                                   endfunction
+    13                                               
+    14                                                   function build_test ();
+    15              1                          1             env = new(vif);
+    16              1                          1             seq = new();
+    17                                                   endfunction
+    18                                               
+    19                                                   function connect_test ();
+    20              1                          1             seq.seqr = env.agt.seqr;
+    21                                                   endfunction
+    22                                               
+    23                                                   task run_seq ();
+    24              1                          1             $display("");
+    25              1                          1             $display("--------------- Assert Reset ---------------");
+    26              1                          1             $display("");
+    27              1                          1             seq.Assert_reset();
+    28              1                          2             repeat (2) @(posedge vif.clk);
+    28              2                          2     
+    29                                               
+    30              1                          1             seq.Release_reset();
+    31              1                          1             #1;
+    32              1                          1             $display("");
+    33              1                          1             $display("--------------- Release Reset ---------------");
+    34              1                          1             $display("");
+    35              1                          2             repeat (2) @(posedge vif.clk);
+    35              2                          2     
+    36                                                       
+    37              1                          1             #1;
+    38              1                          1             $display("");
+    39              1                          1             $display("--------------- FIFO Intialization ---------------");
+    40              1                          1             $display("");
+    41              1                          1             seq.Initialize_FIFO();
+    42              1                          3             repeat (3) @(posedge vif.clk);
+    42              2                          3     
+    43                                                       
+    44              1                          1             #1;
+    45              1                          1             $display("");
+    46              1                          1             $display("--------------- Try to Write ---------------");
+    47              1                          1             $display("");
+    48              1                          1             seq.write_to_full_FIFO();
+    49              1                          2             repeat (2) @(posedge vif.clk);
+    49              2                          2     
+    50                                                       
+    51              1                          1             #1;
+    52              1                          1             $display("");
+    53              1                          1             $display("--------------- Read Operation ---------------");
+    54              1                          1             $display("");
+    55              1                          1             seq.read_operations();
+    56              1                          3             repeat (3) @(posedge vif.clk);
+    56              2                          3     
+    57                                                       
+    58              1                          1             #1;
+    59              1                          1             $display("");
+    60              1                          1             $display("--------------- Try to Read ---------------");
+    61              1                          1             $display("");
+    62              1                          1             seq.read_from_empty_FIFO();
+    63              1                          2             repeat (2) @(posedge vif.clk);
+    63              2                          2     
+    64                                                       
+    65              1                          1             #1;
+    66              1                          1             $display("");
+    67              1                          1             $display("--------------- Random Test Casses ---------------");
+    68              1                          1             $display("");
+    69              1                          1             seq.Randomized_test_cases();
+    70              1                          2             repeat (2) @(posedge vif.clk);
+    70              2                          2     
+    71                                                       
+    72              1                          1             #1;
+    73              1                          1             $display("");
+    74              1                          1             $display("--------------- Assert Reset ---------------");
+    75              1                          1             $display("");
+    76              1                          1             seq.Assert_reset();
+    77              1                          2             repeat (2) @(posedge vif.clk);
+    77              2                          2     
+    78                                                   endtask
+    79                                               
+    80                                                   task run_test ();        
+    81                                                       fork
+    82              1                          1                 env.run_env();
+    83              1                          1                 run_seq();
+
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /pkg/coverage_collector_class/covg              100.00%        100          -    Covered              
+    covered/total bins:                                    28         28          -                      
+    missing/total bins:                                     0         28          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                         4          1          -    Covered              
+        bin auto[1]                                       137          1          -    Covered              
+    Coverpoint cp_wr_en                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wr_en_high                                     76          1          -    Covered              
+        bin wr_en_low                                      65          1          -    Covered              
+    Coverpoint cp_rd_en                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin rd_en_high                                     73          1          -    Covered              
+        bin rd_en_low                                      68          1          -    Covered              
+    Coverpoint cp_full                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin full_high                                      15          1          -    Covered              
+        bin full_low                                      126          1          -    Covered              
+    Coverpoint cp_almostfull                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin almostfull_high                                16          1          -    Covered              
+        bin almostfull_low                                125          1          -    Covered              
+    Coverpoint cp_empty                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin empty_high                                     28          1          -    Covered              
+        bin empty_low                                     113          1          -    Covered              
+    Coverpoint cp_almostempty                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin almostempty_high                               12          1          -    Covered              
+        bin almostempty_low                               129          1          -    Covered              
+    Coverpoint cp_overflow                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin overflow_high                                  10          1          -    Covered              
+        bin overflow_low                                  131          1          -    Covered              
+    Coverpoint cp_underflow                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin underflow_high                                 15          1          -    Covered              
+        bin underflow_low                                 126          1          -    Covered              
+    Coverpoint cp_wr_ack                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wr_ack_high                                    66          1          -    Covered              
+        bin wr_ack_low                                     75          1          -    Covered              
+    Cross illegal_wr                                  100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_to_full                                  9          1          -    Covered              
+    Cross legal_wr                                    100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_to_not_full                             62          1          -    Covered              
+    Cross almost_full_wr                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin almostfull_wr                              12          1          -    Covered              
+    Cross illegal_rd                                  100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_from_empty                              13          1          -    Covered              
+    Cross legal_rd                                    100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_from_empty                              53          1          -    Covered              
+    Cross almost_empty_rd                             100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin almostempty_rd                              5          1          -    Covered              
+    Cross wr_rd_empty                                 100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_op                                      32          1          -    Covered              
+    Cross wr_rd_full                                  100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin wr_op                                      32          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/top/dut/fifo_sva/prop1_cover            assertions Verilog  SVA  assertions.sv(84)
+                                                                                 3 Covered   
+/top/dut/fifo_sva/prop2_cover            assertions Verilog  SVA  assertions.sv(85)
+                                                                                65 Covered   
+/top/dut/fifo_sva/prop3_cover            assertions Verilog  SVA  assertions.sv(86)
+                                                                                10 Covered   
+/top/dut/fifo_sva/prop4_cover            assertions Verilog  SVA  assertions.sv(87)
+                                                                                10 Covered   
+/top/dut/fifo_sva/prop5_cover            assertions Verilog  SVA  assertions.sv(88)
+                                                                                15 Covered   
+/top/dut/fifo_sva/prop6_cover            assertions Verilog  SVA  assertions.sv(89)
+                                                                                25 Covered   
+/top/dut/fifo_sva/prop7_cover            assertions Verilog  SVA  assertions.sv(90)
+                                                                                14 Covered   
+/top/dut/fifo_sva/prop8_cover            assertions Verilog  SVA  assertions.sv(91)
+                                                                                16 Covered   
+/top/dut/fifo_sva/prop9_cover            assertions Verilog  SVA  assertions.sv(92)
+                                                                                12 Covered   
+/top/dut/fifo_sva/prop10_cover           assertions Verilog  SVA  assertions.sv(93)
+                                                                                34 Covered   
+/top/dut/fifo_sva/prop11_cover           assertions Verilog  SVA  assertions.sv(94)
+                                                                                28 Covered   
+/top/dut/fifo_sva/prop12_cover           assertions Verilog  SVA  assertions.sv(95)
+                                                                                 1 Covered   
+/top/dut/fifo_sva/prop13_cover           assertions Verilog  SVA  assertions.sv(96)
+                                                                                 2 Covered   
+/top/dut/fifo_sva/prop14_cover           assertions Verilog  SVA  assertions.sv(97)
+                                                                                12 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 14
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/top/dut/fifo_sva/prop1_assert
+                     assertions.sv(69)                  0          1
+/top/dut/fifo_sva/prop2_assert
+                     assertions.sv(70)                  0          1
+/top/dut/fifo_sva/prop3_assert
+                     assertions.sv(71)                  0          1
+/top/dut/fifo_sva/prop4_assert
+                     assertions.sv(72)                  0          1
+/top/dut/fifo_sva/prop5_assert
+                     assertions.sv(73)                  0          1
+/top/dut/fifo_sva/prop6_assert
+                     assertions.sv(74)                  0          1
+/top/dut/fifo_sva/prop7_assert
+                     assertions.sv(75)                  0          1
+/top/dut/fifo_sva/prop8_assert
+                     assertions.sv(76)                  0          1
+/top/dut/fifo_sva/prop9_assert
+                     assertions.sv(77)                  0          1
+/top/dut/fifo_sva/prop10_assert
+                     assertions.sv(78)                  0          1
+/top/dut/fifo_sva/prop11_assert
+                     assertions.sv(79)                  0          1
+/top/dut/fifo_sva/prop12_assert
+                     assertions.sv(80)                  0          1
+/top/dut/fifo_sva/prop13_assert
+                     assertions.sv(81)                  0          1
+/top/dut/fifo_sva/prop14_assert
+                     assertions.sv(82)                  0          1
+/pkg/sequence_class/Randomized_test_cases/#ublk#30487#85/immed__87
+                     sequence_class.svh(87)             0          1
+
+Total Coverage By Instance (filtered view): 96.54%
+
